@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Search Results</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="main-header">
+    <h1>Search Results</h1>
+    <p>Results matching your query:</p>
+  </header>
+
+  <main>
+    <div id="resultsContainer" class="school-list"></div>
+  </main>
+
+  <script>
+    // Get query from URL
+    const params = new URLSearchParams(window.location.search);
+    const query = params.get("q")?.toLowerCase() || "";
+
+    // Fetch and filter data
+    fetch('schools.json')
+      .then(res => res.json())
+      .then(data => {
+        const filtered = data.filter(s =>
+          s.name.toLowerCase().includes(query) ||
+          s.city.toLowerCase().includes(query) ||
+          s.address.toLowerCase().includes(query)
+        );
+
+        renderResults(filtered);
+      })
+      .catch(err => {
+        console.error("Failed to load schools.json:", err);
+        document.getElementById("resultsContainer").innerHTML = "<p>Error loading results.</p>";
+      });
+
+    // Display results
+    function renderResults(schools) {
+      const container = document.getElementById("resultsContainer");
+      container.innerHTML = "";
+
+      if (schools.length === 0) {
+        container.innerHTML = "<p>No schools found for your search.</p>";
+        return;
+      }
+
+      schools.forEach(school => {
+        const card = document.createElement("div");
+        card.className = "school-card";
+        card.innerHTML = `
+          <h3>${school.name}</h3>
+          <p><strong>Address:</strong> ${school.address}</p>
+          <p><strong>City:</strong> ${school.city}</p>
+          <p><strong>Phone:</strong> ${school.phone}</p>
+          <p><strong>Website:</strong> <a href="${school.website}" target="_blank">${school.website}</a></p>
+          ${school.rating ? `<p><strong>Rating:</strong> ${school.rating} ⭐ (${school.reviews} reviews)</p>` : ''}
+        `;
+        container.appendChild(card);
+      });
+    }
+  </script>
+</body>
+</html>
