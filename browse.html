@@ -1,59 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Browse Schools</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog - Kids English School Directory</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header class="main-header">
-    <h1>Browse Schools</h1>
-    <p>Use the filters below to find the most suitable school for your child.</p>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="browse.html">Schools</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+<header class="main-header">
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="browse.html">Schools</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <h1>Our Blog</h1>
+    <p>Insights on bilingual education, parenting, and international learning in Tokyo</p>
   </header>
 
-  <main class="browse-form-container">
-    <form action="results.html" method="GET" class="advanced-search-form">
-      <label>
-        Keyword:
-        <input type="text" name="q" placeholder="Name, city, address..." />
-      </label>
+  <main class="blog-grid">
+    <article class="blog-post">
+      <h2><a href="#">How to Choose the Right English School in Tokyo</a></h2>
+      <p>Discover the key criteria parents should consider, including curriculum, location, and culture...</p>
+    </article>
 
-      <label>
-        Age Group:
-        <select name="age">
-          <option value="">Any</option>
-          <option value="0-2">0–2 years (Nursery)</option>
-          <option value="3-5">3–5 years (Kindergarten)</option>
-          <option value="6-12">6–12 years (Elementary)</option>
-          <option value="13+">13+ (Middle/High School)</option>
-        </select>
-      </label>
+    <article class="blog-post">
+      <h2><a href="#">5 Benefits of Bilingual Education for Young Children</a></h2>
+      <p>Explore the lifelong advantages bilingual education offers for cognitive development and confidence...</p>
+    </article>
 
-      <label>
-        School Type:
-        <select name="type">
-          <option value="">Any</option>
-          <option value="international">International</option>
-          <option value="conversation">English Conversation</option>
-          <option value="bilingual">Bilingual</option>
-          <option value="afterschool">Afterschool / Preschool</option>
-          <option value="montessori">Montessori / Reggio</option>
-        </select>
-      </label>
-
-      <label>
-        Ward / Area:
-        <input type="text" name="ward" placeholder="E.g., Setagaya, Shibuya" />
-      </label>
-
-      <label>
-        Train Station:
-        <input type="text" name="station" placeholder="E.g., Meguro, Shinjuku" />
-      </label>
-
-      <button type="submit">Search Schools</button>
-    </form>
+    <article class="blog-post">
+      <h2><a href="#">Top Tokyo Neighborhoods for International Families</a></h2>
+      <p>From Setagaya to Meguro, discover the best areas for expat families and their schooling needs...</p>
+    </article>
   </main>
 </body>
 </html>
