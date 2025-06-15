@@ -28,6 +28,16 @@
       <label for="email">Email</label>
       <input type="email" id="email" name="email" required />
 
+      <label for="reason">Reason for Contact</label>
+      <select id="reason" name="reason" required>
+        <option value="">-- Select a reason --</option>
+        <option value="general">General inquiry</option>
+        <option value="list-school">I want to list my school</option>
+        <option value="edit-school">Request a correction</option>
+        <option value="feedback">Feedback or suggestion</option>
+        <option value="other">Other</option>
+      </select>
+
       <label for="message">Message</label>
       <textarea id="message" name="message" rows="5" required></textarea>
 
