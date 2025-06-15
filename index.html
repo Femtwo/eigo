@@ -20,9 +20,9 @@
     <h2>Find the Right English School for Your Child</h2>
     <p>Discover English and international schools for children in Tokyo.</p>
     <section class="search-section">
-    <input type="text" id="searchInput" placeholder="Search by name, city, or address..." />
-    <div id="searchResults" class="school-list"></div>
-  </section>
+      <input type="text" id="searchInput" placeholder="Search by name, city, or address..." />
+      <div id="searchResults" class="school-list"></div>
+    </section>
   </header>
 
   <section class="features">
@@ -51,53 +51,61 @@
     <p>Let parents know about your summer programs</p>
   </section>
   
-<script>
-  let schoolsData = [];
+  <script>
+    let schoolsData = [];
 
-  // Fetch schools.json once
-  fetch('schools.json')
-    .then(response => response.json())
-    .then(data => {
-      schoolsData = data;
-      displayResults(schoolsData); // show all by default
-    })
-    .catch(err => console.error('Error loading schools.json:', err));
+    // Fetch schools.json once (optional fallback if file exists)
+    fetch('schools.json')
+      .then(response => {
+        if (!response.ok) throw new Error('Network response was not ok');
+        return response.json();
+      })
+      .then(data => {
+        schoolsData = data;
+        // Do not display all schools by default
+      })
+      .catch(err => console.error('Error loading schools.json:', err));
 
-  // Listen to user input
-  document.getElementById('searchInput').addEventListener('input', function () {
-    const query = this.value.toLowerCase();
-    const filtered = schoolsData.filter(s =>
-      s.name.toLowerCase().includes(query) ||
-      s.city.toLowerCase().includes(query) ||
-      s.address.toLowerCase().includes(query)
-    );
-    displayResults(filtered);
-  });
-
-  function displayResults(schools) {
-    const container = document.getElementById('searchResults');
-    container.innerHTML = '';
-
-    if (schools.length === 0) {
-      container.innerHTML = '<p>No results found.</p>';
-      return;
-    }
-
-    schools.forEach(school => {
-      const div = document.createElement('div');
-      div.className = 'school-card';
-      div.innerHTML = `
-        <h3>${school.name}</h3>
-        <p><strong>Address:</strong> ${school.address}</p>
-        <p><strong>City:</strong> ${school.city}</p>
-        <p><strong>Phone:</strong> ${school.phone}</p>
-        <p><strong>Website:</strong> <a href="${school.website}" target="_blank">${school.website}</a></p>
-        ${school.rating ? `<p><strong>Rating:</strong> ${school.rating} ⭐ (${school.reviews} reviews)</p>` : ''}
-      `;
-      container.appendChild(div);
+    // Wait for DOM to be fully loaded before attaching event listener
+    document.addEventListener('DOMContentLoaded', () => {
+      const input = document.getElementById('searchInput');
+      if (input) {
+        input.addEventListener('input', function () {
+          const query = this.value.toLowerCase();
+          const filtered = schoolsData.filter(s =>
+            s.name.toLowerCase().includes(query) ||
+            s.city.toLowerCase().includes(query) ||
+            s.address.toLowerCase().includes(query)
+          );
+          displayResults(filtered);
+        });
+      }
     });
-  }
-</script>
+
+    function displayResults(schools) {
+      const container = document.getElementById('searchResults');
+      container.innerHTML = '';
+
+      if (schools.length === 0) {
+        container.innerHTML = '<p>No results found.</p>';
+        return;
+      }
+
+      schools.forEach(school => {
+        const div = document.createElement('div');
+        div.className = 'school-card';
+        div.innerHTML = `
+          <h3>${school.name}</h3>
+          <p><strong>Address:</strong> ${school.address}</p>
+          <p><strong>City:</strong> ${school.city}</p>
+          <p><strong>Phone:</strong> ${school.phone}</p>
+          <p><strong>Website:</strong> <a href="${school.website}" target="_blank">${school.website}</a></p>
+          ${school.rating ? `<p><strong>Rating:</strong> ${school.rating} ⭐ (${school.reviews} reviews)</p>` : ''}
+        `;
+        container.appendChild(div);
+      });
+    }
+  </script>
   
 </body>
 </html>
