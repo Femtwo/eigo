@@ -237,7 +237,7 @@
     "name": "Kids Esl",
     "address": "日本、〒174-0055 東京都板橋区泉町5−３−２",
     "city": "板橋区",
-    "phone": NaN,
+    "phone": "none",
     "website": "",
     "rating": 0.0,
     "reviews": 0
@@ -336,7 +336,7 @@
     "name": "キャッツ英語教室",
     "address": "日本、〒173-0035 東京都板橋区大谷口２丁目６２−１１",
     "city": "板橋区",
-    "phone": NaN,
+    "phone": "none",
     "website": "https://www.cats-englishschool.com/",
     "rating": 0.0,
     "reviews": 0
@@ -381,7 +381,7 @@
     "name": "英会話スポーツ教室 e-kids [成増スタジオ]",
     "address": "日本、〒175-0094 東京都板橋区成増１丁目２８−１５−５０５",
     "city": "板橋区",
-    "phone": NaN,
+    "phone": "none",
     "website": "https://e-kidsjapan.com/",
     "rating": 0.0,
     "reviews": 0
@@ -570,7 +570,7 @@
     "name": "ECCジュニア 徳丸7丁目教室",
     "address": "日本、〒175-0083 東京都板橋区徳丸７丁目９−１０",
     "city": "板橋区",
-    "phone": NaN,
+    "phone": "none",
     "website": "",
     "rating": 5.0,
     "reviews": 2
@@ -730,8 +730,8 @@
   },
   {
     "name": "子供英会話",
-    "address": NaN,
-    "city": NaN,
+    "address": "none",
+    "city": "none",
     "phone": "+81 80-4190-5304",
     "website": "",
     "rating": 0.0,
@@ -966,7 +966,7 @@
     "name": "ベネッセの英語教室 ビースタジオ Verace板橋本町",
     "address": "日本、〒174-0054 東京都板橋区宮本町６２−１９ 101",
     "city": "板橋区",
-    "phone": NaN,
+    "phone": "none",
     "website": "http://www.verace2017.com/",
     "rating": 0.0,
     "reviews": 0
@@ -1083,7 +1083,7 @@
     "name": "アルク Kiddy CAT 英語教室 エイビア Wings Club",
     "address": "日本、〒170-0001 東京都豊島区西巣鴨１丁目２６−８",
     "city": "豊島区",
-    "phone": NaN,
+    "phone": "none",
     "website": "https://peraichi.com/landing_pages/view/avia-eigoschool",
     "rating": 5.0,
     "reviews": 7
@@ -1290,7 +1290,7 @@
     "name": "Tali's English club",
     "address": "日本、〒161-0032 東京都新宿区中落合４丁目１７−１３",
     "city": "新宿区",
-    "phone": NaN,
+    "phone": "none",
     "website": "http://www.talienglish.com/",
     "rating": 5.0,
     "reviews": 16
@@ -1326,7 +1326,7 @@
     "name": "Kix English School",
     "address": "日本、〒115-0045 東京都北区赤羽２丁目７−１ ロールブラン赤羽 ４階",
     "city": "北区",
-    "phone": NaN,
+    "phone": "none",
     "website": "https://kixenglish.jp/",
     "rating": 4.7,
     "reviews": 18
@@ -1344,7 +1344,7 @@
     "name": "QUREO(キュレオ)プログラミング教室 ラボ寺子屋 蓮根校",
     "address": "日本、〒174-0046 東京都板橋区蓮根１丁目２６−８",
     "city": "板橋区",
-    "phone": NaN,
+    "phone": "none",
     "website": "https://qureo.jp/class/laboterakoya_hasune?utm_source=googlemap&utm_medium=maplink&utm_campaign=googlemap_top&from=googlemap_top",
     "rating": 0.0,
     "reviews": 0
@@ -1353,7 +1353,7 @@
     "name": "ニュースタイルイングリッシュ子供向け英語スクール",
     "address": "日本、〒170-0005 東京都豊島区南大塚２丁目４１−４ 南大塚ビル 4階",
     "city": "豊島区",
-    "phone": NaN,
+    "phone": "none",
     "website": "https://www.newstyleenglish.com/",
     "rating": 5.0,
     "reviews": 4
