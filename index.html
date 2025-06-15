@@ -50,33 +50,5 @@
     <h3>Summer Camp Enrollment</h3>
     <p>Let parents know about your summer programs</p>
   </section>
-<script>
-  fetch('schools.json')
-    .then(response => response.json())
-    .then(data => {
-      const container = document.createElement('section');
-      container.className = 'school-list';
-      container.innerHTML = '<h2>Featured Schools</h2>';
-
-      data.forEach(school => {
-        const div = document.createElement('div');
-        div.className = 'school-card';
-        div.innerHTML = `
-          <h3>${school.name}</h3>
-          <p><strong>Address:</strong> ${school.address}</p>
-          <p><strong>City:</strong> ${school.city}</p>
-          <p><strong>Phone:</strong> ${school.phone}</p>
-          <p><strong>Website:</strong> <a href="${school.website}" target="_blank">${school.website}</a></p>
-          ${school.rating ? `<p><strong>Rating:</strong> ${school.rating} ⭐ (${school.reviews} reviews)</p>` : ''}
-        `;
-        container.appendChild(div);
-      });
-
-      document.body.appendChild(container);
-    })
-    .catch(err => console.error('Error loading JSON:', err));
-</script>
-
-  
 </body>
 </html>
