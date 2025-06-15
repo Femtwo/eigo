@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact - Kids English School Directory</title>
+  <title>Blog - Kids English School Directory</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -16,33 +16,25 @@
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
-    <h1>Contact Us</h1>
-    <p>Have a question or want to get in touch? Fill out the form below.</p>
+    <h1>Our Blog</h1>
+    <p>Insights on bilingual education, parenting, and international learning in Tokyo</p>
   </header>
 
-  <main class="contact-form-container">
-    <form action="mailto:youremail@example.com" method="POST" enctype="text/plain">
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name" required />
+  <main class="blog-grid">
+    <article class="blog-post">
+      <h2><a href="#">How to Choose the Right English School in Tokyo</a></h2>
+      <p>Discover the key criteria parents should consider, including curriculum, location, and culture...</p>
+    </article>
 
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required />
+    <article class="blog-post">
+      <h2><a href="#">5 Benefits of Bilingual Education for Young Children</a></h2>
+      <p>Explore the lifelong advantages bilingual education offers for cognitive development and confidence...</p>
+    </article>
 
-      <label for="reason">Reason for Contact</label>
-      <select id="reason" name="reason" required>
-        <option value="">-- Select a reason --</option>
-        <option value="general">General inquiry</option>
-        <option value="list-school">I want to list my school</option>
-        <option value="edit-school">Request a correction</option>
-        <option value="feedback">Feedback or suggestion</option>
-        <option value="other">Other</option>
-      </select>
-
-      <label for="message">Message</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
-
-      <button type="submit">Send Message</button>
-    </form>
+    <article class="blog-post">
+      <h2><a href="#">Top Tokyo Neighborhoods for International Families</a></h2>
+      <p>From Setagaya to Meguro, discover the best areas for expat families and their schooling needs...</p>
+    </article>
   </main>
 </body>
 </html>
