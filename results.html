@@ -9,7 +9,7 @@
 <body>
   <header class="main-header">
     <h1>Search Results</h1>
-    <p>Results matching your query:</p>
+    <p id="search-summary">Loading...</p>
   </header>
 
   <main>
@@ -17,19 +17,43 @@
   </main>
 
   <script>
-    // Get query from URL
+    // Parse query parameters
     const params = new URLSearchParams(window.location.search);
-    const query = params.get("q")?.toLowerCase() || "";
+    const q = params.get("q")?.toLowerCase() || "";
+    const age = params.get("age")?.toLowerCase() || "";
+    const type = params.get("type")?.toLowerCase() || "";
+    const ward = params.get("ward")?.toLowerCase() || "";
+    const station = params.get("station")?.toLowerCase() || "";
 
-    // Fetch and filter data
-    fetch('schools.json')
+    // Update summary text
+    const summaryText = [];
+    if (q) summaryText.push(`matching "${q}"`);
+    if (age) summaryText.push(`for age group "${age}"`);
+    if (type) summaryText.push(`of type "${type}"`);
+    if (ward) summaryText.push(`in "${ward}" ward`);
+    if (station) summaryText.push(`near "${station}" station`);
+    document.getElementById("search-summary").textContent = summaryText.length > 0
+      ? "Showing results " + summaryText.join(", ")
+      : "Showing all schools";
+
+    // Load and filter schools
+    fetch("schools.json")
       .then(res => res.json())
       .then(data => {
-        const filtered = data.filter(s =>
-          s.name.toLowerCase().includes(query) ||
-          s.city.toLowerCase().includes(query) ||
-          s.address.toLowerCase().includes(query)
-        );
+        const filtered = data.filter(school => {
+          const matchQ =
+            !q ||
+            school.name.toLowerCase().includes(q) ||
+            school.address.toLowerCase().includes(q) ||
+            school.city.toLowerCase().includes(q);
+
+          const matchAge = !age || (school.age && school.age.includes(age));
+          const matchType = !type || (school.type && school.type.toLowerCase().includes(type));
+          const matchWard = !ward || school.city.toLowerCase().includes(ward);
+          const matchStation = !station || (school.station && school.station.toLowerCase().includes(station));
+
+          return matchQ && matchAge && matchType && matchWard && matchStation;
+        });
 
         renderResults(filtered);
       })
@@ -38,13 +62,12 @@
         document.getElementById("resultsContainer").innerHTML = "<p>Error loading results.</p>";
       });
 
-    // Display results
     function renderResults(schools) {
       const container = document.getElementById("resultsContainer");
       container.innerHTML = "";
 
       if (schools.length === 0) {
-        container.innerHTML = "<p>No schools found for your search.</p>";
+        container.innerHTML = "<p>No schools found based on your search criteria.</p>";
         return;
       }
 
