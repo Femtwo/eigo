@@ -15,3 +15,198 @@ body {
 /* Header */
 header.main-header {
   background-color: #ffffff;
+  padding: 2rem 1rem;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+header h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  margin-bottom: 1rem;
+}
+
+.highlight {
+  color: #0077cc;
+}
+
+/* Navigation */
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0;
+  margin-bottom: 1rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #0077cc;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Search Section */
+.search-section {
+  padding: 1rem;
+  text-align: center;
+  background: #eef5fb;
+}
+
+.search-section form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+#searchInput {
+  padding: 0.5rem;
+  font-size: 1rem;
+  width: 300px;
+  max-width: 80%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button[type="submit"] {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background: #0077cc;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background: #005fa3;
+}
+
+/* School Cards Grid */
+.school-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.school-card {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.school-card:hover {
+  transform: translateY(-4px);
+}
+
+.school-card h3 {
+  margin-top: 0;
+  color: #0077cc;
+}
+
+.school-card p {
+  margin: 0.3rem 0;
+}
+
+.school-card a {
+  color: #005fa3;
+  text-decoration: underline;
+}
+
+/* Features Section */
+.features {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 2rem;
+  background: #fff;
+}
+
+.feature {
+  flex: 1 1 250px;
+  max-width: 300px;
+  text-align: center;
+  margin: 1rem;
+}
+
+.feature .icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* News Section */
+.news {
+  padding: 2rem;
+  background: #eef2f7;
+  text-align: center;
+}
+
+.news h2 {
+  margin-bottom: 1rem;
+}
+
+.news h3 {
+  margin-top: 1rem;
+  color: #0077cc;
+}
+
+/* Browse Form Page */
+.browse-form-container {
+  padding: 2rem;
+  background-color: #fff;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.advanced-search-form {
+  display: grid;
+  gap: 1rem;
+}
+
+.advanced-search-form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+}
+
+.advanced-search-form input,
+.advanced-search-form select {
+  padding: 0.5rem;
+  font-size: 1rem;
+  margin-top: 0.25rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.advanced-search-form button {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.advanced-search-form button:hover {
+  background-color: #005fa3;
+}
